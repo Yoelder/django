@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Servicios{% endblock %}
+{% block content %}
+
+
+
+
+
+<div class="container mt-5 text-center">
+    <h1 class="py-4">Listado de Servicios </h1>
+    <h4>Tenemos los mejores precios del mercado no se arrepentir&aacute</h4>
+    <img src="https://triico.net/wp-content/uploads/2020/04/7-Mejores-foros-de-programadores-1024x475.png" class="img-fluid"alt="...">
+    <div class='contain  text-justify'>
+    <h2 class="py-4 text-center">Asesoria de compras</h2>
+    <h4>Le ayudamos a encontrar productos  acorde a sus necesidades </h4>
+    <li>1. Define el propósito de tu PC: ¿Será para juegos, trabajo de diseño gráfico, edición de video o tareas de oficina? Esto te ayudará a determinar qué componentes son más importantes para tus necesidades.</li>
+    <li>2. Investigamos antes de comprar: Leemos reseñas de diferentes componentes como procesadores, tarjetas gráficas, placas base, y unidades de almacenamiento. Compara las especificaciones técnicas y el rendimiento para encontrar los componentes que mejor se adapten a tus necesidades.</li>
+    <li>3. Compatibilidad: Nos aseguramos de que todos los componentes que elijas sean compatibles entre sí y con tu presupuesto. No querrás comprar un procesador que no encaje en la placa base que has seleccionado.</li>
+    <li>4. Considera el futuro: Si planeas actualizar tu PC en el futuro, asegúrate de elegir componentes que te den la flexibilidad para hacerlo. Por ejemplo, elegir una placa base con suficientes ranuras de expansión o una fuente de alimentación con capacidad suficiente para manejar futuras actualizaciones.</li>
+    <li>5. No te excedas en tus necesidades: A veces es tentador comprar el componente más potente, pero si no lo necesitas para tus tareas diarias, estarías gastando innecesariamente.</li>
+    </div>
+    <img src="https://www.asus.com/media/Odin/Websites/mx/ProductLine/20210820015217.jpg" class="img-fluid"alt="...">
+    
+    <h2 class="py-4">Mantenimiento especializado</h2>
+    <h4>"¡Servicio Profesional de Mantenimiento de PC!</h4>
+    <div class='container  text-justify'>
+    <div> ¿Tu ordenador funciona más lento de lo normal? ¿Necesitas ayuda para eliminar virus o malware?
+        ¡Estamos aquí para ayudarte! En PC Teconology
+        , ofrecemos una amplia gama de servicios de mantenimiento de PC, incluyendo:</div>
+        <div>Limpieza de virus y malware 🛡️</div>
+        <div>Optimización del sistema para un rendimiento óptimo 🚀</div>
+        <div>Actualización de software y controladores para mejorar la seguridad y estabilidad 💻</div>
+        <div >Eliminación de archivos basura y programas no deseados 🗑️</div>
+    
+        <img src="https://sistemas.tecnoderecho.com/wp-content/uploads/Pasta-termica.jpg" class="img-fluid"alt="...">
+        <h2 class="py-4 text-center">"Potenciando tu Vida a través de la Tecnología."</h2>
+        <img src="{% static 'logo_web.jpeg' %}" class="img-fluid" alt="...">
+<div class="d-flex justify-content-center">
+
+
+  <button type="button" id="destino" class="btn btn-success" onclick="enviarWhatsapp()">
+
+    <i class="fa fa-whatsapp"> Contactar</i>
+  </button>
+</div>
+<div class="container p-5"></div>
+<script>
+  function enviarWhatsapp() {
+    // Reemplaza "tu_numero" con el número de teléfono al que deseas enviar el mensaje
+    var numeroTelefono = "+5359240990";
+
+    // Abre WhatsApp con el número de teléfono y un mensaje predefinido
+    window.location.href = "https://wa.me/" + numeroTelefono + "?text=Hola%20Necesito%20de%20sus%20servicios&PC&TECNOLOGY";
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+
+
+
+
+{% block title %} Administradores {% endblock %}
+
+{% block content %}
+
+
+
+
+<body class="bg-info">
+
+    <div class="container">
+        <!-- Contenendor general -->
+        <div class=" row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 ">
+                <a href="/cerrar" class="fa fa-power-off fa-2x bg-dark py"> Cerrar Sesion: {{ request.user.username }}</a>
+                {% if messages %}
+                {% for message in messages %}
+                
+                <div class="alert alert-dismissible alert-success" id="alert-message">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+                    <strong class="text-dark">{{message}}</strong>
+                </div>
+                {% endfor %}
+                {% endif %}
+                <script>
+                    // Ocultar el mensaje después de 5 segundos (5000 milisegundos)
+                    setTimeout(function () {
+                        document.getElementById('alert-message').style.display = 'none';
+                    }, 5000);
+                </script>
+                
+                <h2>Gestion de Elementos</h2>
+                <div class="card bg-ligth">
+                    <div class="card-body">
+                        <form action="/registrar/" method="post" class="col g-3 center"> {% csrf_token %}
+                            <div class="form-group">
+                                <input type="date" value="{{fecha}}" id="txtFecha" name="txtFecha" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="txtNombre" name="txtNombre" class="form-control"
+                                    placeholder="Servicios" maxlength="30" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" id="numCreditos" name="numCreditos" class="form-control"
+                                    placeholder="Importe" maxlength="9" required>
+                            </div>
+                            <div class="form-group">
+
+                                <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Tabla -->
+            <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8 px-5 py-4 ">
+
+                
+                    <form class="form-inline"  action="/manage/" method="POST" > {% csrf_token %}
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" name="Buscar" aria-label="Search" value="{{request.POST.Buscar}}">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                
+
+                <div class="table-responsive">
+
+                    <h2 class="container">Lista de Elementos</h2>
+
+
+
+                    <table class="table table-striped bg-ligth  ">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+
+                                <th>Servicios</th>
+                                <th>Importe</th>
+                                <th>Fecha</th>
+                                <th colspan="2">Opciones</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for c in cursos%}
+
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+
+                                <td>{{c.nombre}}</td>
+                                <td>{{c.credito}}</td>
+                                <td>{{c.fecha}}</td>
+                                <td><a href="/editarcu/{{c.codigo}}"
+                                        class="fa fa-pencil-square fa-2x bg-dark btEditar"></a>Editar</td>
+                                <td><a href="/eliminar/{{c.codigo}}"
+                                        class="fa fa-trash fa fa-2x bg-dark  btnEliminar"></a>Eliminar</td>
+
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+    <!-- Agrega este script al final de tu plantilla HTML o en un archivo JavaScript separado -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js">
+
+
+    </script>
+
+    <script>
+        (function () {
+            const btnEliminar = document.querySelectorAll('.btnEliminar');
+            btnEliminar.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const confirmacion = confirm('! Seguro de eliminar el Elemento ¡');
+                    if (!confirmacion) {
+                        e.preventDefault();
+                    }
+                });
+            });
+        })();
+
+    </script>
+    </div>
+</body>
+
+</html>
+
+{% endblock %}

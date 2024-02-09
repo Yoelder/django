@@ -1,0 +1,8 @@
+<!-- registro_form.html -->
+
+<form method="post" action="{% url 'registrar' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+

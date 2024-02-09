@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Barbería El autentico USA</title>
+  <!-- Agregar enlaces a los estilos de Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Agregar tu propio archivo de estilos si es necesario -->
+ 
+</head>
+<body class="bg-primary">
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Barbería El autentico USA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cabecera de la página -->
+  <header class="jumbotron jumbotron-fluid text-center bg-secondary">
+    <div class="container">
+      <h1 class="display-4">Bienvenido a Barbería El autentico.usa</h1>
+      <h3>Combinando lo que se lleva con que te pega</h3>
+      <p class="lead">Donde la elegancia se encuentra con el estilo.</p>
+      <img src="{% static 'barberia.jpeg' %}" class="img-fluid" alt="...">
+      <h3>Nuestro manager lo recibirá </h3>
+      <img src="{% static 'autentico.jpg' %}" class="img-fluid" alt="...">
+    </div>
+    <div class="d-flex justify-content-center">
+      
+      <button type="button" class="btn btn-success" onclick="enviarWhatsapp()">Contactar  </button>
+    </div>
+    </div>
+  </header>
+
+  <!-- Sección de Servicios -->
+  <section class="container mt-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://i.ytimg.com/vi/6fNti6pct4o/sddefault.jpg" class="card-img-top" alt="Servicio 1">
+          <div class="card-body">
+            <h5 class="card-title">Corte de Pelo</h5>
+            <p class="card-text">Nuestros estilistas expertos te brindarán el corte de pelo perfecto que se adapte a tu estilo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://www.consalud.es/estetic/uploads/s1/45/00/23/trucos-para-afeitarse-de-manera-adecuada.jpeg" class="card-img-top" alt="Servicio 2">
+          <div class="card-body">
+            <h5 class="card-title">Afeitado</h5>
+            <p class="card-text">Experimenta el afeitado clásico con nuestras técnicas tradicionales y productos de alta calidad.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYVFRgWFRUYGBgYGBgYGhgaGBgYGhgYGhoaGRgYGBgcIS4lHB4rIRgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHDQhISE0NDQ0NDQ0NDQ0NDQ0NDQ0MTE0NDQ0NDQxNDQ0NDQ0NDQ0NDQ0NDQxNDQ0NDQ0NDE0NP/AABEIALQBFwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAABAgADBAUGBwj/xAA+EAACAQIDBQUFBQgABwAAAAABAgADEQQSIQUGMUFRImFxgZEHEzKhwUJSYrHwI3KCkrLR4fEUFhdDY3Oi/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAIBAwQF/8QAIhEBAQEBAAIDAAIDAQAAAAAAAAECESExAxJBUWEyQnEi/9oADAMBAAIRAxEAPwDi7QiKDDMWkN4JLwCDDBGUQIDGJi3hENOJXXrBBc89O8xxMLE6uL8hp4k2/tA12PqG5J5uB5A6/Sa81zqq8Cbny4TJ2o1iQeIt663mvXhCb7WFoS17d3rKi0UmOHWS9QWsoI+vj1hXEFR2Tr+vWYt4THDqwsW1J4C/GX4cdkeOvn/pvSY5NhbqPz1l1CpbTrp6ar9R4GCXyy1NgR91rX7j8J9JdWp5qhA4Zadh+6VQ/wBLSgqNTrl4HqOhI7j9ek2OHoNdHPEHI3poe8afPvkXw6ydXbHwefsG99QOoykAkd4BUjwnT1ahZEJABAZGH40OVm8GXIR3CaKpWKVfeDQE03W3eSrr8tfGblquZ6gB0zK4HPUdPBh/KJM9r/1BRGgAgadXMymWAStBLSYAEZZGgWA8jSARisAKJAIQYyrAKywQWhVYYgF5I9pIa4wCQmEyCEBHtFIhWAYVMEkAmEQCMIaZTMHaegDDiNPL9WMzZptp4jQ21HMQNdtOuHYEdBfuMwrwsbxZqL7SQCQCECGBaGZ+DwRfQehmxTdmq32TJupFzGr6aFjfy0gE6xNycQbdg/KbTDezqq41sjcedpn3i58Ov4cfQcMCQRmC6qftrwuPxDTTmJ1Oxwr0CptmUWHguVkPjd1X+CWVvZxiQbqL+FuPUXm22XuLi7N2bE5BqQPh5mRrUvp0zm59uexKhiSo0Xtr4OAf60t3ZptMH8Tm3EDl9nKpX8vlNq+4mKpAPlDAA3Cm5yzX0lyXW/a4eFhb1tp6xL5bfQkwpFVY4nVyGMpirGAgOJMsZRITJaIjcoAYTAUy0RQssAlMBZYsS0sWAZI0kDioQZIIQa0BkhEAEwiC0KwJGAgAhGkNN3TQbSBubCw6k/kJvwZqttUbgH9AQOdIgtL2EAS/5x1PFY4S1U1t427zL6WFJ4D/ABNhS2dYX4njw4eMy6bMt9uNRU1BmtPWaOEQagXnmO7WyHzA2twnpuBQqAvGwnn17e34vEZiIombRXu0mIqzIotbS8yL1PDOAEyKUxlW4l9PSdY8u/TLA0nkm/OBWliDl0DkNbxB18NCJ6urazivads/NSSuONNsjfuvwPk1v5pftyzeXn8vO1MdZVTEvEpRlEYiC2kl4abhDeASW1hh1lspBjXkhiI4ipHvDBAjKYqmESg4kikwwOOgJhMBhIGFTBaQQdPIIBDeA1pDFBjiGiBIyXFjGkvA5JqdiR0Nv16TZ4TB3/XPvPSbPZm6eIxLu9JQEDas7ZQSdSF5kidG27NZVC5O0OIBGvgeZ7iRI1qR0z8erO8aHAbOt5nz43m32fs9nICKflxvxvymZSwRRgjAg2vqLHhwt6Tpt2KAznTgPHU8ZFrpMsrZGxRTUE6tzv1mZtLHJh0LvwHLmTyEz30mlxuHDtmfVV+EcvG0iu2Z1yWM32xFyUokIOZBMxf+ozg9qmp15G06jE7Ypp2QEHiQPRRqx8pz2P23TcsiIXZfivRXINCdbnNwB4CJrv501mz3eOj3f3/p1SFdGQnrznd0aysAwOhF547g8PTcqVQIeNl0HXS3ET1HYVigBP2fylZ128T8nx8z9qXbG9NDDIzu1yv2VtmPSYWL2xTxuFfJqjodSD2WGqk6ciAe+01ON2tRSsjNhC3vKiojsisSx0GUuQqcOsy96N4VODtTzBqrFLMMrKq2L3Houn3pU1a47xM3088p8JaJWpjpLcz5oSILQBpQcRgYoENoDLGIgWSBYhjRAISYYYGMpiQpDVkkHGGGOQtEjExbwlGhEBggWCS0UGMDANoRFBhEBwYbRAY14a7TZVEM2Fpn4fc+8y8izEsT43InSu5Ru0wCtZUudS5Pwgd85XdnGK/uWJ7WHujd9JjZWH7pIBmw2jhWq4jKxIyi414doG49J5Nzmn18WaxOeuL948PdEqKO1mK38VJ+kyN117RPK1hr6/lBvLilXCK1+0GXyYBr/WazdHailytxrr3G54j9dZc9PLqf+nbOLzX47AhxY8O6bFWvBMsbm8rlhu8iOHS6uODDX5GI+7oztUuM7ghiFtcG4bwuCRp1PWdXkEhSZJV3lvbPLlKGycjdkWUajUkkniZ0GzWKZT0iYh1U6xEq34AzJ4q+dn/W6OylY3uct8wXiBz5zlvafh8tOgy8M7qT1JCsL/yNO02ZVzKOo0mj9pFMHBMTxV6ZHiWyn5MZ6Myc7Hzd619vrfx5XT1lyiUJL1lhwIGhgBgMDCTFtCogOIyHnFXhHSA8mWACMBDCkR1hIvIBAZJJBDA4y8ggkMJG8El4IDiMIixxAl414tpIBvDeCEQ1fhMU9Nw6GzDzBHNWHMEcp6PsOvTxKK4AOUWK3OZD924+JehP0nmcv2bi2pV6LqxW1VFaxtmR2CsrdRrfynPWZp2+H5bjx+V12+RCUnC3IbSxI0PEEaddJwuAxhpsGBtbv4WFh856Fvxs8/8ADs5cnLYgW7+s8hNWxPidPUWnPOfHHb5tTsseybubzLUARjrbiZ04efP+z8aUYWbprPS9g7wkqoc6cOXrGvCc667pGEsY6TWYbGo1iGHrJjtq06SlncC2szrpPbU47EZK16l8ljY8r9D05zXf8y1C5VMPZAdGNRbsPvBQOHiZpd4N8FcFaYJJ5kegmNsT3mV/dMczLlZ7+tvOwk+nW/JLyR7FsB2K3ZCtxxOl/ATTe0+qRhVUfbqrf91VY/1ZZxG529tbPeozMNFOtrkXHA6Tsd7Ky4rDqUYEgM1vS4HfoJ2zuScrxfJ8duvt+V51SWXGVoJYBLc0WMsVTGEph1Elucix4aUSwRcsZZLTpGgEKmUwVhEghIgQCSOpkg44YGQmCQQgwhtFEkBpZeVxlMBhJADCIEWMYtoSYaIjIO0v7y/1CIJkYJc1WmvV0Hq4EDvvaJjAmGyH7eb0A/uRPDWckme0+1HDFsNmUXyEEnov+/ynic54dfmvmLqb+VrTcYPaRVdCRNBeXU2PAnTn9ZWs9RnXHVYbb7jg3gfTly4CV4vGPX+Ik+c5+k9ja2v60m1wmPCMCwBUH9Cc7nnp2m++2bg9nnMDlvYXFtdb9OXEztdk7DrCmuXKpuL9k+h4TlhtsMwNIhLDqLf5m3p7erEpaq4B92CASACwbTxOUHznO9/XoxrOfzq7bGxqmFIcqpVstmUZWB7x0vzmZsTaKlWRh2TwOvgfDQ/IdI9fa3vUKliTZWViCbsLW14i9/1eV7Fo5FI5spYWFtQM2nPhfTr4yZJTWr3q/auCpLTLJxJHQ2GpJvz5CaMSPVJ4m/E+v5SW1nqzOR49XtFRJeNBKSdDLLyoRryWxZGyytTLFMMEG0K6yRkWA0cRLRrQ1GEkN5IY4YyGQGSUhBDBaEQJGWJeODAjRxK7xs0BxAZAZIaNpsd3aWfFUB/5Fb+Ttn+ma2863cDZrNVNcjsIGVT95yLG3cAT/N3SdXkVidrt9tYUVKLowurqVI7joSO8T5+25stsPVamwNgSVP3lJ7LT6MxAupnC76bC/wCIp6DtoCVPoSPA2nLOuV6d4ms/3HjdpZSNiL+kmIpFGKsCCvEHQgxc/C3Kd3j9LEaxzfr9f3kZri3Qfq8rb8vrLSAosdbn5C31P5w1bQutrcyRpz5zbPinej2dMroRw5Kwv8l8rCa7Dp20AuLsvkCe0fIg+kzcFUzOEIsM4UjrZiQNOgFpFjpmui2ZinzhHGo7YI0NrG9rceDevlOiKFLAE6m4Js1jbQgd4Km004pqtUENqluJvYEFrXHcpnQpilKoR8J4E8FNgQvh0/zacL7eievLS4ki/rcgWBGlrd0qEtxJBY24XJHnrKxPRPTzX2McGBRABAIjERlEhEASxDECwrAuMdDKrx1MMXCBoAZHhtC8kgklMcRaC8l5IQeCAGMTAAhEEaABIBCBHIFoaS8OaYeI2ki3scxHIdfHhadR7OcVha1TLWX9vxQMb02A1OUffHHW/dM14nWzzeMnd7dZ65D1AUp8ejOPwjkPxek9KwmFVECIoVVFgBoAJciR5wurq+XomZmeFbjSajGJNw5mDiKYMyxea863h3cWuzNoGPA/d0AF+vhPPsfs16D5XFuh5HznulXC8Zr8dsdKwKuoYHr+fj/czc/Jcs38U15nt4mp/LS/qfqIydoi/X5DVp6hiPZctUE0ahRtLBu0o1Oa/PmJzOP3Bx1Bre6LqCQGQhr/AMN7j/E6zcrz347m8aBWs6kfdJHPU5io7+IluA0qk6gZ79eJ+fGX1ti4lbhsNWGVh/2n0tfu7/lNlsPYVRyvYZS+qkqwupAyuumqjTtarxmW+G5l6y8C5zljcqbMBfjlFQhSfC06PBuhRl55mIPHiAbAeRHnKsBuZjSyhqZQMCLkp2TYi7a3AIbkJVtzZz4GotOoBZ7ulRfhYrbMv4WBy6c9PKPrbXT7yRTVa7G3WLERs2oN763jrOritWGAGMsoEQwiAyWmtJADIDygFVjgQqLCQwwVMYtaVq8YmAQZIFEkocVAJAY0IAmEGCQQGkJiidLsfc6vXsz/ALJDzYEuR3JpbztJtkVnNvpzFXEKguzW6dT4CaPGbQdyRey9B0757lT3Fwnu2RqecsLGo2rjoVP2etlt5zxbeTYz4PEPRfXLqrfeU/C30PeDNzZTebmdaiW0KrIyupIZSGVhxBBuCO+4lUkpyfQe5O8y4ygGJAqrZaijk3JgPutxHmOU6afNu7u26mDrLVTXk63sHXmp+h5GfQGx9qpiKaVKbZkYXB5jqpHIjgROOs8enGuz+2fUMxnEy8srdRJ46ysU07xWw9uUyOBgxzkC442k8XKvo4kKLC0y8A2Y3nNpiL8D5zo9jMAvfNz7RvxK3HCNllBe8YPO/XkspzPNfbNb3FBuaVgb9zKyn8xPRbmcx7QdjDEYKtrZkRnHigLfSZb/AA2Sfrwk13RmVHZSRnFuFxoeydNdPWZ+yt4Va61RZhzA0IHHQTWuQWpnrp6rf6TUV+y9+837iDYzpYztj0OhiUcXRgw7vrLg85PdLbAwuMR3ANJjkqKwBX3b2ubH7psf4Z75it2cLVW3u1Qngydg+NhofMTnfFVL2PMg8a82m3N2a2GJYftKf31Hw/vr9nx4TTK8N6svGWIGjrDVyNyiuIpWNKYQRrwwKJIdTBDlggcODHvEEJMpBrzJwGDeu606alnbgOQHNmPIDrLth7Gq4p8lMcLF3PwoOrdT0A1M9d3f2DTwqZUF2Ns7n4nPf0HQf7k61x0znrB3d3Qo4YKzgPV4lzwU9EX7I7+M6ZcOvSFRLkWc/br6nhV7uee+1zYYqYcV1Hbom570PxDy0PkZ6X7uaXeDDB6TowuCpBHUEWM3vPKf8vD5fkmRjMOabuh4qxXxsbXmPOzy0Z1u4W85wdYK5PuKhAf8B4CoB3c+o8BOSkizrZbL2PqpLEAggggEEagg6ggxWSeaeyne3MowVZrMo/YsT8Si5NM944juuOQnqQInGzj1Y12dVJSB0IgxNAMLa6TJBEDESeN75amjs4A3A/vM1VK2lt9YtQEzZOK7ayqFW8y1M11LSZSVJsrnrLJvNfvOb4PEDrRqD1UiZIqgzXbzVQMLW/8AW/8ASZXXP6+Y+cWbs0z3p+X+Zi7YS1Ru/X1mQw/Z0/4fpG2xTvY/hH5CdXNqma6g9NPqPrPon2b7aOJwNJmN3p/sn65ksFJ7ypQ+c+dKYvcd3zH+p6d7E9ola1bDk6OgqKPxIcrfJh/LI1OxuL5e3pr5zjd59y1YGrhlCvxamNFbqU+63dwPdOwpGZImZ8mvFeDo1jY6EaEHiD0I5GXoZ1ntD2IFIxKCwYhagA+0fhfz4HvtOQpNKVL1lAyGJeMsKRYZCJFksFTBHywyhwZitJJCHt+5+ASlhKQRbe8SnUc82ZxcknzsOgAm4wpzKCeOkkk5V6J6XLMhIZJhpZMLaFMZTpykki+nPPt8278UQuNqgcND/wDInPSSTtn1HLf+VSQSSSkrqFQqyspIYG4I0II1BB6z6K3T2lUr4ShVqEF3UZiBa5va/jz8ZJJz36dvh9tw39oackk5vR+HbiJbSkkhlWDhKq0kkVk9lRjOd38xbLhKtrfA3LuMkkNvt4vWQDIBwuI+NGnkJJJ3eVoTo+nWdd7NXKbSw+XS71EPeuR9D6CSSL6M+30SkyUkkkRu2Dtuir4eqrC4KP8AIEg+oBniuHkklVmWRLUkkh0R46wSQHEkkkD/2Q==" class="card-img-top" alt="Servicio 3">
+          <div class="card-body">
+            <h5 class="card-title">Diseño de Barba</h5>
+            <p class="card-text">Nuestros barberos expertos te ayudarán a darle forma y estilo a tu barba de acuerdo a tus preferencias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2023 Barbería El atentico USA. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Agregar enlaces a los scripts de Bootstrap y jQuery (es necesario para el funcionamiento del navbar) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    function enviarWhatsapp() {
+      // Reemplaza "tu_numero" con el número de teléfono al que deseas enviar el mensaje
+      var numeroTelefono = "+14804663442";
+
+      // Abre WhatsApp con el número de teléfono y un mensaje predefinido
+      window.location.href = "https://wa.me/" + numeroTelefono + "?text=Hola%20Diabla%20Necesito%20sus%20servicios%20de%20barbero";
+    }
+  </script>
+</body>
+</html>
+
