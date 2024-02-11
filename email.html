@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+
+
+{% load static %}
+{% block title%} contactanos {% endblock %}
+{% block content %}
+
+
+
+
+<!-- MATERIAL DESIGN ICONIC FONT -->
+
+
+
+
+
+	<div class="wrapper p-5">
+		<div class="inner">
+			<form action="contactar/" method="post">{% csrf_token %}
+
+				
+				<h3>Contactanos </h3>
+				
+
+				<p>Formulario para contactarnos via Correo o enviar Sugerencias o Quejas tambien via Whatsapp   <a href="https://wa.me/59240990?text=Hola%20Necesito%20de%20sus%20servicios%20PCTecnology" class="fa fa-whatsapp bg-success fa-2x" id="WPS"></a> </p>
+				<label class="form-group">
+					<input type="text" class="form-control" name="txtAsunto" required>
+					<span>Nombre o Asunto</span>
+					<span class="border"></span>
+				</label>
+				<label class="form-group">
+					<input type="email" class="form-control" name="txtEmail" required>
+					<span for="">Correo Electrónico</span>
+					<span class="border"></span>
+				</label>
+				<label class="form-group">
+					<textarea   class="form-control" name="txtMensaje" required></textarea>
+					<span for="">Mensaje</span>
+					<span class="border"></span>
+				</label>
+				
+				<button>Enviar  
+					<i class="zmdi zmdi-arrow-right"></i>
+				</button>
+			</form>
+		</div>
+		<div>
+	</div>
+
+
+
+
+<link rel="stylesheet" href="{% static 'fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+
+<!-- STYLE CSS -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock %}
