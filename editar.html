@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+
+{% load static %}
+{% block title%} Editar {% endblock %}
+{% block content %}
+<div class="row">
+    <div class=" col-sm-12 col-md-6 col-lg-4 col-xl-4 offset-md-4 ">
+        <h2>Edicion de Elementos </h2>
+        <div class="card bg-ligth">
+            <div class="card-body">
+                <form action="/editar/" method="post" class="col g-3 center"> {% csrf_token %}
+                    <div class="form-group">
+                        
+                        <input type="text" id="txtCodigo" name="txtCodigo" value="{{cursos.codigo}}" class="form-control"
+                            placeholder="Codigo" maxlength="6" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="txtFecha" name="txtFecha" value="{{cursos.fecha}}" class="form-control"
+                              required>
+                    </div>
+                    <div class="form-group">
+                        
+                        <input type="text" id="txtNombre" name="txtNombre" value="{{cursos.nombre}}" class="form-control"
+                            placeholder="Nombre" maxlength="30" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" id="numCreditos" name="numCreditos" value="{{cursos.credito}}"class="form-control"
+                             maxlength="9" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+
+
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+
+{% endblock %}
